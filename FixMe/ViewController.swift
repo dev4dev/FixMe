@@ -7,6 +7,7 @@
 
 import UIKit
 import SnapKit
+import SwiftUI
 
 enum Section: Int {
     case main
@@ -14,6 +15,7 @@ enum Section: Int {
 
 enum Item: String, CaseIterable {
     case leaks
+    case swiftUI
 }
 
 final class ViewController: UIViewController {
@@ -65,6 +67,8 @@ extension ViewController: UICollectionViewDelegate {
         switch item {
         case .leaks:
             navigationController?.pushViewController(LeaksViewController(), animated: true)
+        case .swiftUI:
+            navigationController?.pushViewController(UIHostingController(rootView: SwiftUIView(counter: 5)), animated: true)
         }
 
         collectionView.deselectItem(at: indexPath, animated: true)
