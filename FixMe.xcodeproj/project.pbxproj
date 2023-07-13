@@ -13,6 +13,10 @@
 		63581F622A5FCA06000BC086 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63581F602A5FCA06000BC086 /* Main.storyboard */; };
 		63581F642A5FCA07000BC086 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 63581F632A5FCA07000BC086 /* Assets.xcassets */; };
 		63581F672A5FCA07000BC086 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63581F652A5FCA07000BC086 /* LaunchScreen.storyboard */; };
+		63581F702A5FCA34000BC086 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 63581F6F2A5FCA34000BC086 /* SnapKit */; };
+		63581F732A5FCE3B000BC086 /* LeaksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63581F722A5FCE3B000BC086 /* LeaksViewController.swift */; };
+		63581F752A5FCE4F000BC086 /* LeaksCounter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63581F742A5FCE4F000BC086 /* LeaksCounter.swift */; };
+		63581F772A5FCFB0000BC086 /* ClockHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63581F762A5FCFB0000BC086 /* ClockHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +28,9 @@
 		63581F632A5FCA07000BC086 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		63581F662A5FCA07000BC086 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		63581F682A5FCA07000BC086 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		63581F722A5FCE3B000BC086 /* LeaksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaksViewController.swift; sourceTree = "<group>"; };
+		63581F742A5FCE4F000BC086 /* LeaksCounter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaksCounter.swift; sourceTree = "<group>"; };
+		63581F762A5FCFB0000BC086 /* ClockHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClockHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +38,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				63581F702A5FCA34000BC086 /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,6 +64,7 @@
 		63581F592A5FCA06000BC086 /* FixMe */ = {
 			isa = PBXGroup;
 			children = (
+				63581F712A5FCE2C000BC086 /* Leaks */,
 				63581F5A2A5FCA06000BC086 /* AppDelegate.swift */,
 				63581F5C2A5FCA06000BC086 /* SceneDelegate.swift */,
 				63581F5E2A5FCA06000BC086 /* ViewController.swift */,
@@ -65,6 +74,16 @@
 				63581F682A5FCA07000BC086 /* Info.plist */,
 			);
 			path = FixMe;
+			sourceTree = "<group>";
+		};
+		63581F712A5FCE2C000BC086 /* Leaks */ = {
+			isa = PBXGroup;
+			children = (
+				63581F722A5FCE3B000BC086 /* LeaksViewController.swift */,
+				63581F742A5FCE4F000BC086 /* LeaksCounter.swift */,
+				63581F762A5FCFB0000BC086 /* ClockHelper.swift */,
+			);
+			path = Leaks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -83,6 +102,9 @@
 			dependencies = (
 			);
 			name = FixMe;
+			packageProductDependencies = (
+				63581F6F2A5FCA34000BC086 /* SnapKit */,
+			);
 			productName = FixMe;
 			productReference = 63581F572A5FCA06000BC086 /* FixMe.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +133,9 @@
 				Base,
 			);
 			mainGroup = 63581F4E2A5FCA06000BC086;
+			packageReferences = (
+				63581F6E2A5FCA34000BC086 /* XCRemoteSwiftPackageReference "SnapKit" */,
+			);
 			productRefGroup = 63581F582A5FCA06000BC086 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -138,9 +163,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				63581F772A5FCFB0000BC086 /* ClockHelper.swift in Sources */,
 				63581F5F2A5FCA06000BC086 /* ViewController.swift in Sources */,
 				63581F5B2A5FCA06000BC086 /* AppDelegate.swift in Sources */,
+				63581F752A5FCE4F000BC086 /* LeaksCounter.swift in Sources */,
 				63581F5D2A5FCA06000BC086 /* SceneDelegate.swift in Sources */,
+				63581F732A5FCE3B000BC086 /* LeaksViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -358,6 +386,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		63581F6E2A5FCA34000BC086 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		63581F6F2A5FCA34000BC086 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 63581F6E2A5FCA34000BC086 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 63581F4F2A5FCA06000BC086 /* Project object */;
 }
