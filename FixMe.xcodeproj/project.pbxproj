@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		63204D542A606E8400E47D68 /* SwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63204D532A606E8400E47D68 /* SwiftUIView.swift */; };
+		6341EF662A700F3600598126 /* Info.md in Resources */ = {isa = PBXBuildFile; fileRef = 6341EF652A700F3600598126 /* Info.md */; };
 		63581F5B2A5FCA06000BC086 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63581F5A2A5FCA06000BC086 /* AppDelegate.swift */; };
 		63581F5D2A5FCA06000BC086 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63581F5C2A5FCA06000BC086 /* SceneDelegate.swift */; };
 		63581F5F2A5FCA06000BC086 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63581F5E2A5FCA06000BC086 /* ViewController.swift */; };
@@ -18,10 +19,15 @@
 		63581F732A5FCE3B000BC086 /* LeaksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63581F722A5FCE3B000BC086 /* LeaksViewController.swift */; };
 		63581F752A5FCE4F000BC086 /* LeaksCounter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63581F742A5FCE4F000BC086 /* LeaksCounter.swift */; };
 		63581F772A5FCFB0000BC086 /* ClockHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63581F762A5FCFB0000BC086 /* ClockHelper.swift */; };
+		6380B8C82A6FC1B800777579 /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = 6380B8C72A6FC1B800777579 /* Then */; };
+		6380B8CA2A6FC30600777579 /* ReactiveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6380B8C92A6FC30600777579 /* ReactiveView.swift */; };
+		6380B8CC2A6FC31100777579 /* ReactiveViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6380B8CB2A6FC31100777579 /* ReactiveViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		63204D532A606E8400E47D68 /* SwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIView.swift; sourceTree = "<group>"; };
+		6341EF652A700F3600598126 /* Info.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = Info.md; sourceTree = "<group>"; };
+		6341EF672A700F9700598126 /* Layout.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Layout.png; sourceTree = "<group>"; };
 		63581F572A5FCA06000BC086 /* FixMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FixMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		63581F5A2A5FCA06000BC086 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		63581F5C2A5FCA06000BC086 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -33,6 +39,8 @@
 		63581F722A5FCE3B000BC086 /* LeaksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaksViewController.swift; sourceTree = "<group>"; };
 		63581F742A5FCE4F000BC086 /* LeaksCounter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaksCounter.swift; sourceTree = "<group>"; };
 		63581F762A5FCFB0000BC086 /* ClockHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClockHelper.swift; sourceTree = "<group>"; };
+		6380B8C92A6FC30600777579 /* ReactiveView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReactiveView.swift; sourceTree = "<group>"; };
+		6380B8CB2A6FC31100777579 /* ReactiveViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReactiveViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,6 +49,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				63581F702A5FCA34000BC086 /* SnapKit in Frameworks */,
+				6380B8C82A6FC1B800777579 /* Then in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -74,6 +83,7 @@
 		63581F592A5FCA06000BC086 /* FixMe */ = {
 			isa = PBXGroup;
 			children = (
+				6380B8C52A6FBF6B00777579 /* Reactive */,
 				63204D522A606E7800E47D68 /* SwiftUI */,
 				63581F712A5FCE2C000BC086 /* Leaks */,
 				63581F5A2A5FCA06000BC086 /* AppDelegate.swift */,
@@ -97,6 +107,17 @@
 			path = Leaks;
 			sourceTree = "<group>";
 		};
+		6380B8C52A6FBF6B00777579 /* Reactive */ = {
+			isa = PBXGroup;
+			children = (
+				6380B8C92A6FC30600777579 /* ReactiveView.swift */,
+				6380B8CB2A6FC31100777579 /* ReactiveViewModel.swift */,
+				6341EF652A700F3600598126 /* Info.md */,
+				6341EF672A700F9700598126 /* Layout.png */,
+			);
+			path = Reactive;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -115,6 +136,7 @@
 			name = FixMe;
 			packageProductDependencies = (
 				63581F6F2A5FCA34000BC086 /* SnapKit */,
+				6380B8C72A6FC1B800777579 /* Then */,
 			);
 			productName = FixMe;
 			productReference = 63581F572A5FCA06000BC086 /* FixMe.app */;
@@ -146,6 +168,7 @@
 			mainGroup = 63581F4E2A5FCA06000BC086;
 			packageReferences = (
 				63581F6E2A5FCA34000BC086 /* XCRemoteSwiftPackageReference "SnapKit" */,
+				6380B8C62A6FC1B800777579 /* XCRemoteSwiftPackageReference "Then" */,
 			);
 			productRefGroup = 63581F582A5FCA06000BC086 /* Products */;
 			projectDirPath = "";
@@ -163,6 +186,7 @@
 			files = (
 				63581F672A5FCA07000BC086 /* LaunchScreen.storyboard in Resources */,
 				63581F642A5FCA07000BC086 /* Assets.xcassets in Resources */,
+				6341EF662A700F3600598126 /* Info.md in Resources */,
 				63581F622A5FCA06000BC086 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -177,6 +201,8 @@
 				63581F772A5FCFB0000BC086 /* ClockHelper.swift in Sources */,
 				63204D542A606E8400E47D68 /* SwiftUIView.swift in Sources */,
 				63581F5F2A5FCA06000BC086 /* ViewController.swift in Sources */,
+				6380B8CC2A6FC31100777579 /* ReactiveViewModel.swift in Sources */,
+				6380B8CA2A6FC30600777579 /* ReactiveView.swift in Sources */,
 				63581F5B2A5FCA06000BC086 /* AppDelegate.swift in Sources */,
 				63581F752A5FCE4F000BC086 /* LeaksCounter.swift in Sources */,
 				63581F5D2A5FCA06000BC086 /* SceneDelegate.swift in Sources */,
@@ -408,6 +434,14 @@
 				minimumVersion = 5.0.0;
 			};
 		};
+		6380B8C62A6FC1B800777579 /* XCRemoteSwiftPackageReference "Then" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/devxoul/Then";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -415,6 +449,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 63581F6E2A5FCA34000BC086 /* XCRemoteSwiftPackageReference "SnapKit" */;
 			productName = SnapKit;
+		};
+		6380B8C72A6FC1B800777579 /* Then */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 6380B8C62A6FC1B800777579 /* XCRemoteSwiftPackageReference "Then" */;
+			productName = Then;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

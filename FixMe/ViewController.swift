@@ -16,6 +16,7 @@ enum Section: Int {
 enum Item: String, CaseIterable {
     case leaks
     case swiftUI
+    case reactive
 }
 
 final class ViewController: UIViewController {
@@ -69,6 +70,8 @@ extension ViewController: UICollectionViewDelegate {
             navigationController?.pushViewController(LeaksViewController(), animated: true)
         case .swiftUI:
             navigationController?.pushViewController(UIHostingController(rootView: SwiftUIView(counter: 5)), animated: true)
+        case .reactive:
+            navigationController?.pushViewController(UIHostingController(rootView: ReactiveView()), animated: true)
         }
 
         collectionView.deselectItem(at: indexPath, animated: true)

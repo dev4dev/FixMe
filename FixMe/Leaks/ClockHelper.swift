@@ -13,7 +13,7 @@ protocol ClockHelperDelegate {
 }
 
 final class ClockHelper {
-    private var subscriptions: Set<AnyCancellable> = .init()
+    private var subscription: AnyCancellable?
 
     var delegate: ClockHelperDelegate?
 
@@ -21,8 +21,11 @@ final class ClockHelper {
     private var counter = 0
 
     init() {
-        Timer.publish(every: 1.0, on: .main, in: .common)
-            .autoconnect()
+        // no-op
+    }
+
+    func start(interval: TimeInterval) {
+        subscription = Timer.publish(every: interval, on: .main, in: .common)
             .sink { _ in
                 self.clockTickCallback?()
                 self.counter += 1
@@ -30,6 +33,10 @@ final class ClockHelper {
                     self.delegate?.clockTicketTenTimes(self)
                 }
             }
-            .store(in: &subscriptions)
+    }
+
+    func stop() {
+        subscription?.cancel()
+        subscription = nil
     }
 }

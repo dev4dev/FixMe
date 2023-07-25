@@ -7,11 +7,21 @@
 
 import UIKit
 import SnapKit
+import Then
 
 final class LeaksViewController: UIViewController {
 
     private let clockLabel: UILabel = .init()
     private let clockHelper: ClockHelper = .init()
+    private var activeInterval: Double = 1.0 {
+        didSet {
+            intervalLabel.text = "\(Int(activeInterval))"
+        }
+    }
+
+    private let intervalLabel = UILabel().then {
+        $0.text = "1"
+    }
 
     init() {
         LeaksCounter.shared.up()
@@ -45,9 +55,33 @@ final class LeaksViewController: UIViewController {
         view.backgroundColor = .white
 
         let label = UILabel()
-        label.text = "\(LeaksCounter.shared.counter)"
+        label.text = "Instances: \(LeaksCounter.shared.counter)"
+
+        let intervalControl = UIStepper()
+        intervalControl.addTarget(self, action: #selector(intervalChange(_:)), for: .valueChanged)
+        intervalControl.value = 1.0
+        intervalControl.minimumValue = 1.0
+        intervalControl.maximumValue = 5.0
+
+        let startCTA = UIButton()
+        startCTA.setTitle("Start", for: .normal)
+        startCTA.setTitleColor(.label, for: .normal)
+        startCTA.addAction(.init(handler: { _ in
+            self.clockHelper.start(interval: self.activeInterval)
+        }), for: .touchUpInside)
+
+        let stopCTA = UIButton()
+        stopCTA.setTitle("Stop", for: .normal)
+        stopCTA.setTitleColor(.label, for: .normal)
+        stopCTA.addAction(.init(handler: { _ in
+            self.clockHelper.stop()
+        }), for: .touchUpInside)
 
         let stack = UIStackView(arrangedSubviews: [
+            UIStackView(arrangedSubviews: [intervalLabel, intervalControl, startCTA, stopCTA]).then {
+                $0.axis = .horizontal
+                $0.spacing = 10.0
+            },
             label,
             clockLabel
         ])
@@ -65,6 +99,10 @@ final class LeaksViewController: UIViewController {
         })
 
         clockHelper.delegate = self
+    }
+
+    @objc private func intervalChange(_ sender: UIStepper) {
+        activeInterval = sender.value
     }
 }
 
