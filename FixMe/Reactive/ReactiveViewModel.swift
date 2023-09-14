@@ -20,7 +20,6 @@ final class ReactiveViewModel: ObservableObject {
             .flatMap { [unowned self] in
                 self.request()
             }
-            .delay(for: 3.0, scheduler: DispatchQueue.global())
             .receive(on: DispatchQueue.main)
             .sink { completion in
                 print(completion)
@@ -43,6 +42,7 @@ final class ReactiveViewModel: ObservableObject {
         return URLSession.shared.dataTaskPublisher(for: request)
             .map { $0.data }
             .decode(type: [Cat].self, decoder: JSONDecoder())
+            .delay(for: 3.0, scheduler: DispatchQueue.global())
             .eraseToAnyPublisher()
     }
 }
