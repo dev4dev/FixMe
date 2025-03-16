@@ -69,7 +69,7 @@ extension ViewController: UICollectionViewDelegate {
         case .leaks:
             navigationController?.pushViewController(LeaksViewController(), animated: true)
         case .swiftUI:
-            navigationController?.pushViewController(UIHostingController(rootView: SwiftUIView(counter: 5)), animated: true)
+            navigationController?.pushViewController(UIHostingController(rootView: SwiftUIView()), animated: true)
         case .reactive:
             navigationController?.pushViewController(UIHostingController(rootView: ReactiveView()), animated: true)
         }

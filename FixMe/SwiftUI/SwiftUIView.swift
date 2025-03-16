@@ -6,29 +6,31 @@
 //
 
 import SwiftUI
-
 struct SwiftUIView: View {
-    @State var counter: Int
 
-    init(counter: Int) {
-        self.counter = counter
+    @State var model = Model()
+
+    init() {
     }
 
     var body: some View {
-        HStack {
-            Button("-") {
-                counter -= 1
-            }
-            Text("\(counter)")
-            Button("+") {
-                counter += 1
-            }
+        TabView {
+            DudesListView(model: model)
+                .tabItem {
+                    Label("Dudes", systemImage: "person.fill")
+                }
+
+            FavoriteDudesListView(model: model)
+                .tabItem {
+                    Label("Fave Dudes", systemImage: "person.crop.circle.fill.badge.checkmark")
+                }
+                .badge(model.favesCount)
         }
     }
 }
 
 struct SwiftUIView_Previews: PreviewProvider {
     static var previews: some View {
-        SwiftUIView(counter: 1)
+        SwiftUIView()
     }
 }
