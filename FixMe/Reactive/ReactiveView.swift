@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ReactiveView: View {
 
-    @ObservedObject private var viewModel = ReactiveViewModel()
+    @StateObject private var viewModel = ReactiveViewModel()
 
     var body: some View {
         ZStack {
