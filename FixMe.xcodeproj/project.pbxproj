@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		630310382D8ABED400B2DE91 /* DateFormatters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630310372D8ABED100B2DE91 /* DateFormatters.swift */; };
 		630D8E2A2D873586001B8593 /* Fakery in Frameworks */ = {isa = PBXBuildFile; productRef = 630D8E292D873586001B8593 /* Fakery */; };
 		630D8E2C2D873D9E001B8593 /* DudesListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630D8E2B2D873D9E001B8593 /* DudesListView.swift */; };
 		630D8E2E2D873E9E001B8593 /* FavoriteDudesListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630D8E2D2D873E9E001B8593 /* FavoriteDudesListView.swift */; };
@@ -31,6 +32,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		630310372D8ABED100B2DE91 /* DateFormatters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatters.swift; sourceTree = "<group>"; };
 		630D8E2B2D873D9E001B8593 /* DudesListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DudesListView.swift; sourceTree = "<group>"; };
 		630D8E2D2D873E9E001B8593 /* FavoriteDudesListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteDudesListView.swift; sourceTree = "<group>"; };
 		630D8E2F2D873F11001B8593 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
@@ -71,6 +73,7 @@
 		630D8E332D874C34001B8593 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				630310372D8ABED100B2DE91 /* DateFormatters.swift */,
 				630D8E312D874C02001B8593 /* CatService.swift */,
 				630D8E342D874C44001B8593 /* Cat.swift */,
 			);
@@ -231,6 +234,7 @@
 				630D8E302D873F11001B8593 /* Model.swift in Sources */,
 				630D8E2E2D873E9E001B8593 /* FavoriteDudesListView.swift in Sources */,
 				630D8E322D874C02001B8593 /* CatService.swift in Sources */,
+				630310382D8ABED400B2DE91 /* DateFormatters.swift in Sources */,
 				63581F5F2A5FCA06000BC086 /* ViewController.swift in Sources */,
 				6380B8CC2A6FC31100777579 /* ReactiveViewModel.swift in Sources */,
 				630D8E352D874C44001B8593 /* Cat.swift in Sources */,
